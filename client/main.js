@@ -12,6 +12,7 @@ Router.route('/photoshop');
 Router.route('/originals');
 Router.route('/stories');
 Router.route('/covers');
+Router.route('/lyrics');
 Router.route('/', {
     name: 'home',
 	template: 'home'
