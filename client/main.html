@@ -1,0 +1,40 @@
+<head>
+  <div><title>Jeremy's Bullfrog Blog</title></div>
+  
+</head>
+<body>
+	<div class = "color">
+	</div>
+	<div>
+	</div>
+</body>
+<template name="main">
+	<div class = "headingSize">	
+	<h1 class = "shadow">Jeremy Koloski "The Bullfrog Blog"</h1> 
+	</div>
+	{{> navigation}}
+    {{> yield}}
+    <hr />
+    <p>Copyright &copy; Bullfrog Blog, 2015-2016.</p>
+</template>
+
+<template name="navigation">
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+		<div class="btn-group" role="group">
+			<a class="btn btn-large btn-info" href="{{pathFor route='home'}}">Home</a>
+		</div>
+		<div class="btn-group" role="group">
+			<a class="btn btn-large btn-info" href="{{pathFor route='photoshop'}}">Photoshop</a>
+		</div>
+		<div class="btn-group" role="group">
+			<a class="btn btn-large btn-info" href="{{pathFor route='originals'}}">Original Compositions</a>
+		</div>
+		<div class="btn-group" role="group">
+			<a class="btn btn-large btn-info" href="{{pathFor route='stories'}}">Short Stories</a>
+		</div>
+		<div class="btn-group" role="group">
+			<a class="btn btn-large btn-info" href="{{pathFor route='covers'}}">Covers</a>
+		</div>
+	</div>
+</template>
+
