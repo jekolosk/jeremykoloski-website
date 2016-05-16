@@ -2,6 +2,9 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
 import './covers.html';
+var snowflakesCount = 0;
+var followMeCount = 0;
+var swanSongCount = 0;
 var eventId= "";
 var currentPage = "page1";
 var newCurrentPage = "newPage1";
@@ -111,3 +114,36 @@ Template.stories.events({
     },
 });
 
+Template.lyrics.events({
+	'click #showSnowflakes': function(){
+		if(snowflakesCount == 0){
+			console.log("yo");
+			$("div.snowflakes").show();
+			snowflakesCount ++;
+		}else{
+			$("div.snowflakes").hide();
+			snowflakesCount = 0;
+		}	
+	},
+	'click #showFollowMe': function(){
+		if(followMeCount == 0){
+			console.log("yo");
+			$("div.followMe").show();
+			followMeCount ++;
+		}else{
+			$("div.followMe").hide();
+			followMeCount = 0;
+		}	
+	},
+	'click #showSwanSong': function(){
+		if(swanSongCount == 0){
+			console.log("yo");
+			$("div.swanSong").show();
+			 swanSongCount++;
+		}else{
+			$("div.swanSong").hide();
+			swanSongCount = 0;
+		}	
+	}
+
+});

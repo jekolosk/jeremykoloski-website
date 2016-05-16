@@ -157,7 +157,38 @@ div.newPage{
 	padding-left:50px;
 	padding-right:50px;
 }
-
-
+div.snowflakes{
+	background-color:white;
+	width:800px;
+	margin: auto;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:50px;
+	display:none;
+}
+div.followMe{
+	background-color:white;
+	width:800px;
+	margin: auto;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:50px;
+	display:none;
+}
+div.swanSong{
+	background-color:white;
+	width:800px;
+	margin: auto;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:50px;
+	display:none;
+}
+.glyphicon.glyphicon-chevron-down{
+	padding-left:100px;
+}
+.list-group{
+	
+}
 
 
