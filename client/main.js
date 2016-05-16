@@ -5,6 +5,13 @@ import './covers.html';
 var snowflakesCount = 0;
 var followMeCount = 0;
 var swanSongCount = 0;
+var completeCount = 0;
+var letMeInCount = 0;
+var bittersweetCount = 0;
+var heroesCount = 0;
+var ramblingsCount = 0;
+var optimistCount = 0;
+var justBreatheCount = 0;
 var eventId= "";
 var currentPage = "page1";
 var newCurrentPage = "newPage1";
@@ -143,7 +150,86 @@ Template.lyrics.events({
 		}else{
 			$("div.swanSong").hide();
 			swanSongCount = 0;
-		}	
+		}
+	}	
+	,
+	'click #showComplete': function(){
+		if(completeCount == 0){
+			console.log("yo");
+			$("div.complete").show();
+			 completeCount++;
+		}else{
+			$("div.complete").hide();
+			completeCount = 0;
+		}
 	}
+	,
+	'click #showLetMeIn': function(){
+		if(letMeInCount == 0){
+			console.log("yo");
+			$("div.letMeIn").show();
+			 letMeInCount++;
+		}else{
+			$("div.letMeIn").hide();
+			letMeInCount = 0;
+		}
+	}
+	,
+	'click #showBittersweet': function(){
+		if(bittersweetCount == 0){
+			console.log("yo");
+			$("div.bittersweet").show();
+			 bittersweetCount++;
+		}else{
+			$("div.bittersweet").hide();
+			bittersweetCount = 0;
+		}
+	}
+	,
+	'click #showHeroes': function(){
+		if(heroesCount == 0){
+			console.log("yo");
+			$("div.heroes").show();
+			 heroesCount++;
+		}else{
+			$("div.heroes").hide();
+			heroesCount = 0;
+		}
+	}
+	,
+	'click #showRamblings': function(){
+		if(ramblingsCount == 0){
+			console.log("yo");
+			$("div.ramblings").show();
+			 ramblingsCount++;
+		}else{
+			$("div.ramblings").hide();
+			ramblingsCount = 0;
+		}
+	}
+	,
+	'click #showOptimist': function(){
+		if(optimistCount == 0){
+			console.log("yo");
+			$("div.optimist").show();
+			 optimistCount++;
+		}else{
+			$("div.optimist").hide();
+			optimistCount = 0;
+		}
+	}
+	,
+	'click #showJustBreathe': function(){
+		if(justBreatheCount == 0){
+			console.log("yo");
+			$("div.justBreathe").show();
+			 justBreatheCount++;
+		}else{
+			$("div.justBreathe").hide();
+			justBreatheCount = 0;
+		}
+	}
+	,
+
 
 });

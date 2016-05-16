@@ -184,11 +184,75 @@ div.swanSong{
 	padding-bottom:50px;
 	display:none;
 }
+div.complete{
+	background-color:white;
+	width:800px;
+	margin: auto;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:50px;
+	display:none;
+}
+div.letMeIn{
+	background-color:white;
+	width:800px;
+	margin: auto;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:50px;
+	display:none;
+}
+div.ramblings{
+	background-color:white;
+	width:800px;
+	margin: auto;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:50px;
+	display:none;
+}
+div.optimist{
+	background-color:white;
+	width:800px;
+	margin: auto;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:50px;
+	display:none;
+}
+div.heroes{
+	background-color:white;
+	width:800px;
+	margin: auto;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:50px;
+	display:none;
+}
+div.bittersweet{
+	background-color:white;
+	width:800px;
+	margin: auto;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:50px;
+	display:none;
+}
+div.justBreathe{
+	background-color:white;
+	width:800px;
+	margin: auto;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:50px;
+	display:none;
+}
 .glyphicon.glyphicon-chevron-down{
 	padding-left:100px;
 }
-.list-group{
-	
+.linkSize{
+ font-size: 25px;
+ 
 }
 
 
