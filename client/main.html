@@ -1,16 +1,13 @@
 <head>
-  <div><title>Jeremy's Bullfrog Blog</title></div>
-  
+	<link rel="icon" type="image/png" href="/images/cartoon-bullfrog.png" />
+	<div><title>Jeremy's Bullfrog Blog</title></div>
 </head>
 <body>
-	<div class = "color">
-	</div>
-	<div>
-	</div>
 </body>
 <template name="main">
-	<div class = "headingSize">	
-	<h1 class = "shadow">Jeremy Koloski "The Bullfrog Blog"</h1> 
+	<div class = "headingSize" >	
+	<h1 class = "shadow"> <img src = "/images/cartoon-bullfrog.png" id = "venice" class = "venice" alt = "Generic placeholder thumbnail" style = "height:50px; width:50px">
+	Jeremy Koloski "The Bullfrog Blog"</h1> 
 	</div>
 	{{> navigation}}
     {{> yield}}
@@ -31,9 +28,6 @@
 		</div>
 		<div class="btn-group" role="group">
 			<a class="btn btn-large btn-info" href="{{pathFor route='stories'}}">Short Stories</a>
-		</div>
-		<div class="btn-group" role="group">
-			<a class="btn btn-large btn-info" href="{{pathFor route='covers'}}">Covers</a>
 		</div>
 		<div class="btn-group" role="group">
 			<a class="btn btn-large btn-info" href="{{pathFor route='lyrics'}}">Lyrics</a>

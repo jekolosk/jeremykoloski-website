@@ -1,7 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
-import './covers.html';
 var snowflakesCount = 0;
 var followMeCount = 0;
 var swanSongCount = 0;
@@ -13,7 +12,7 @@ var ramblingsCount = 0;
 var optimistCount = 0;
 var justBreatheCount = 0;
 var eventId= "";
-var currentPage = "page1";
+var currentPage = "page1"
 var newCurrentPage = "newPage1";
 var myPics = ["venice", "lizard_woman","Swiss_stream","beach","Brandeis_fall","cat","Colorize","compositing_fun","mountains_water","swiss_view","swiss_mounatins_lens_flare","swissDE2","FlowerDE","into_the_sunset","SwissDE1"];
 var caughtInTheCrossfirePages = ["page1","page2","page3","page4","page5","page6","page7"];
@@ -21,7 +20,6 @@ var theBallPages = ["newPage1","newPage2","newPage3","newPage4","newPage5","newP
 Router.route('/photoshop');
 Router.route('/originals');
 Router.route('/stories');
-Router.route('/covers');
 Router.route('/lyrics');
 Router.route('/', {
     name: 'home',
@@ -31,18 +29,6 @@ Router.configure({
     layoutTemplate: 'main'
 });
 
-Template.covers.events({
-  'click .thumbnail': function(){   
-		var eventId = event.target.id;
-		var image = document.getElementById('galleryImage');
-	    $(".gray").show();
-        image.src = "/images/" + eventId + ".jpg";
-    },
-	'click #remove': function(){ 
-		console.log("clicked");
-		$(".gray").hide();
-	}	
-});
 Template.photoshop.events({
   'click .thumbnail': function(){   
 		var image = document.getElementById('galleryImage');
@@ -82,8 +68,8 @@ Template.stories.events({
 	'click #nextPage': function(){   
 		for (var i = 0; i < caughtInTheCrossfirePages.length-1; i++) {
 			if(caughtInTheCrossfirePages[i]==currentPage){
-				//console.log("#"+ myPages[i+1]);
-				//console.log("i is " + i);
+				console.log("#"+ currentPage);
+				console.log("i is " + i);
 				$("#"+caughtInTheCrossfirePages[i+1]).show();
 				currentPage = caughtInTheCrossfirePages[i+1];
 				break;
@@ -230,6 +216,5 @@ Template.lyrics.events({
 		}
 	}
 	,
-
 
 });
