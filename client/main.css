@@ -249,9 +249,25 @@ div.justBreathe{
 	padding-bottom:50px;
 	display:none;
 }
+.container { 
+	height: 576px;
+    overflow: hidden; 
+}
 .linkSize{
 	font-size: 25px;
 	font-family: "Arial Black", Gadget, sans-serif;
+}
+.width{
+	width: 1000px;
+}
+.font-size{
+	font-size: 95%;
+	text-align: left;
+	color: white;
+	background: -webkit-linear-gradient(left top, #0066ff, #99c2ff); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #0066ff, #99c2ff); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right,#0066ff, #99c2ff); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #0066ff, #99c2ff); /* Standard syntax */
 }
 
 
