@@ -79,16 +79,6 @@ p.description{
     width: 100px;
     height: 100px;
 }
-.glyphicon.glyphicon-chevron-right.again{
-    text-align: center;
-	font-size: 50px;
-	color:white;
-	position: absolute;
-    top: 900px;
-    right: 0;
-    width: 100px;
-    height: 100px;
-}
 .glyphicon.glyphicon-chevron-left{
     text-align: center;
 	font-size: 50px;
@@ -99,17 +89,34 @@ p.description{
     width: 100px;
     height: 100px;
 }
+
+.glyphicon.glyphicon-chevron-right.again{
+    text-align: center;
+	font-size: 50px;
+	color:white;
+	position: absolute;
+    width: 100px;
+	left: 800px;
+    height: 100px;
+}
 .glyphicon.glyphicon-chevron-left.again{
     text-align: center;
 	font-size: 50px;
 	color:white;
 	position: absolute;
-    top: 900px;
-    left: 0;
+	left: -105px;
     width: 100px;
     height: 100px;
 }
+
+div.caughtInTheCrossfire{
+	display:none;
+}
+div.theBall{
+	display:none;
+}
 div.page1{
+	position: relative;
 	background-color:white;
 	width:800px;
 	height:560px;
@@ -117,10 +124,19 @@ div.page1{
 	padding-left:50px;
 	padding-right:50px;
 }
+div.page1again{
+	background-color:white;
+	width:800px;
+	height:560px;
+	margin: auto;
+	padding-left:50px;
+	padding-right:50px;
+	position: relative;
+}
 div.page{
 	position:absolute;
-	top: 140px;
-	right: 50px;
+	top: 194px;
+	right:50px;
 	left: 50px;
 	display: none;
 	background-color:white;
@@ -132,10 +148,8 @@ div.page{
 	padding-right:50px;
 }
 div.newPage{
-	position:absolute;
-	top: 720px;
-	right: 50px;
-	left: 50px;
+	position:relative;
+	top: -560px;
 	display: none;
 	background-color:white;
 	width:800px;
@@ -236,8 +250,8 @@ div.justBreathe{
 	display:none;
 }
 .linkSize{
- font-size: 25px;
- 
+	font-size: 25px;
+	font-family: "Arial Black", Gadget, sans-serif;
 }
 
 

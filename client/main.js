@@ -1,6 +1,8 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
+var caughtInTheCrossfireCount = 0;
+var theBallCount = 0;
 var snowflakesCount = 0;
 var followMeCount = 0;
 var swanSongCount = 0;
@@ -15,7 +17,7 @@ var eventId= "";
 var currentPage = "page1"
 var newCurrentPage = "newPage1";
 var myPics = ["venice", "lizard_woman","Swiss_stream","beach","Brandeis_fall","cat","Colorize","compositing_fun","mountains_water","swiss_view","swiss_mounatins_lens_flare","swissDE2","FlowerDE","into_the_sunset","SwissDE1"];
-var caughtInTheCrossfirePages = ["page1","page2","page3","page4","page5","page6","page7"];
+var caughtInTheCrossfirePages = ["page1","page2","page3","page4","page5","page6","page7", "page8"];
 var theBallPages = ["newPage1","newPage2","newPage3","newPage4","newPage5","newPage6","newPage7","newPage8","newPage9","newPage10","newPage11","newPage12","newPage13"];
 Router.route('/photoshop');
 Router.route('/originals');
@@ -65,11 +67,32 @@ Template.photoshop.events({
 });
 //class for formatting id for page selection
 Template.stories.events({
+	'click #showCaughtInTheCrossfire': function(){
+		if(caughtInTheCrossfireCount == 0){
+			console.log("yo");
+			$("div.caughtInTheCrossfire").show();
+			caughtInTheCrossfireCount ++;
+		}else{
+			$("div.caughtInTheCrossfire").hide();
+			caughtInTheCrossfireCount = 0;
+		}	
+	},
+	'click #showTheBall': function(){
+		if(theBallCount == 0){
+			console.log("yo");
+			$("div.theBall").show();
+			theBallCount ++;
+		}else{
+			$("div.theBall").hide();
+			theBallCount = 0;
+		}	
+	},
 	'click #nextPage': function(){   
 		for (var i = 0; i < caughtInTheCrossfirePages.length-1; i++) {
 			if(caughtInTheCrossfirePages[i]==currentPage){
 				console.log("#"+ currentPage);
 				console.log("i is " + i);
+				$("#"+caughtInTheCrossfirePages[i]).hide();
 				$("#"+caughtInTheCrossfirePages[i+1]).show();
 				currentPage = caughtInTheCrossfirePages[i+1];
 				break;
@@ -79,6 +102,7 @@ Template.stories.events({
 	'click #prevPage': function(){   
 		for (var i = 0; i < caughtInTheCrossfirePages.length; i++) {
 			if(caughtInTheCrossfirePages[i]==currentPage&&i>0){
+				$("#"+caughtInTheCrossfirePages[i-1]).show();
 				$("#"+caughtInTheCrossfirePages[i]).hide();
 				currentPage = caughtInTheCrossfirePages[i-1];
 				break;
@@ -89,6 +113,7 @@ Template.stories.events({
 		for (var i = 0; i < theBallPages.length-1; i++) {
 			if(theBallPages[i]==newCurrentPage){
 				console.log(theBallPages[i+1]);
+				$("#"+theBallPages[i]).hide();
 				$("#"+theBallPages[i+1]).show();
 				newCurrentPage = theBallPages[i+1];
 				break;
@@ -99,6 +124,7 @@ Template.stories.events({
 	'click #prevPage1': function(){   
 		for (var i = 0; i < theBallPages.length; i++) {
 			if(theBallPages[i]==newCurrentPage&&i>0){
+				$("#"+theBallPages[i-1]).show();
 				$("#"+theBallPages[i]).hide();
 				newCurrentPage = theBallPages[i-1];
 				break;
