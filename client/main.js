@@ -15,7 +15,7 @@ var optimistCount = 0;
 var justBreatheCount = 0;
 var eventId= "";
 var currentPage = "page1"
-var newCurrentPage = "newPage1";
+var ballCurrentPage = "newPage1";
 var myPics = ["venice", "lizard_woman","Swiss_stream","beach","Brandeis_fall","cat","Colorize","compositing_fun","mountains_water","swiss_view","swiss_mounatins_lens_flare","swissDE2","FlowerDE","into_the_sunset","SwissDE1"];
 var caughtInTheCrossfirePages = ["page1","page2","page3","page4","page5","page6","page7", "page8"];
 var theBallPages = ["newPage1","newPage2","newPage3","newPage4","newPage5","newPage6","newPage7","newPage8","newPage9","newPage10","newPage11","newPage12","newPage13"];
@@ -36,12 +36,12 @@ Template.photoshop.events({
   'click .thumbnail': function(){   
 		var image = document.getElementById('galleryImage');
 		eventId = event.target.id;	
-		console.log("id is" + eventId);
+		//console.log("id is" + eventId);
 	    $(".gray").show();
         image.src = "/images/" + eventId + ".jpg";
     },
 	'click #remove': function(){ 
-		console.log("clicked");
+		//console.log("clicked");
 		$(".gray").hide();
 	},
 	'click #nextPic': function(){ 
@@ -68,7 +68,7 @@ Template.photoshop.events({
 			}
 		}
 		if(eventId=="venice"){
-				console.log(eventId);
+				//console.log(eventId);
 				image.src = "/images/SwissDE1.jpg";
 				eventId = "SwissDE1";
 		}
@@ -79,7 +79,7 @@ Template.photoshop.events({
 Template.stories.events({
 	'click #showCaughtInTheCrossfire': function(){
 		if(caughtInTheCrossfireCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.caughtInTheCrossfire").show();
 			caughtInTheCrossfireCount ++;
 		}else{
@@ -89,7 +89,7 @@ Template.stories.events({
 	},
 	'click #showTheBall': function(){
 		if(theBallCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.theBall").show();
 			theBallCount ++;
 		}else{
@@ -100,16 +100,24 @@ Template.stories.events({
 	'click #nextPage': function(){   
 		for (var i = 0; i < caughtInTheCrossfirePages.length-1; i++) {
 			if(caughtInTheCrossfirePages[i]==currentPage){
-				console.log("#"+ currentPage);
-				console.log("i is " + i);
+				//console.log("#"+ currentPage);
+				//console.log("i is " + i);
 				$("#"+caughtInTheCrossfirePages[i]).hide();
 				$("#"+caughtInTheCrossfirePages[i+1]).show();
 				currentPage = caughtInTheCrossfirePages[i+1];
 				break;
 			} 
-		}		
+		}
+			if(currentPage == "page8"){
+				//console.log("hey");
+				$(".glyphicon.glyphicon-chevron-right.crossfire").hide();
+			}
+			if(currentPage != "page1"){
+				//console.log("hey");
+				$(".glyphicon.glyphicon-chevron-left.crossfire").show();
+			}
     },
-	'click #prevPage': function(){   
+	'click #prevPage': function(){   		
 		for (var i = 0; i < caughtInTheCrossfirePages.length; i++) {
 			if(caughtInTheCrossfirePages[i]==currentPage&&i>0){
 				$("#"+caughtInTheCrossfirePages[i-1]).show();
@@ -118,41 +126,60 @@ Template.stories.events({
 				break;
 			} 
 		}
+		if(currentPage=="page7"){
+				$(".glyphicon.glyphicon-chevron-right.crossfire").show();
+		}
+		if(currentPage=="page1"){
+				$(".glyphicon.glyphicon-chevron-left.crossfire").hide();
+		}
     },
 	'click #nextPage1': function(){   
 		for (var i = 0; i < theBallPages.length-1; i++) {
-			if(theBallPages[i]==newCurrentPage){
-				console.log(theBallPages[i+1]);
+			if(theBallPages[i]==ballCurrentPage){
 				$("#"+theBallPages[i]).hide();
 				$("#"+theBallPages[i+1]).show();
-				newCurrentPage = theBallPages[i+1];
+				ballCurrentPage = theBallPages[i+1];
 				break;
 			} 
-		}		
+		}
+			if(ballCurrentPage == "newPage13"){
+				//console.log("onPage13");
+				$(".glyphicon.glyphicon-chevron-right.ball").hide();
+			}
+			if(ballCurrentPage != "newPage1"){
+				//console.log("notOnPage1");
+				$(".glyphicon.glyphicon-chevron-left.ball").show();
+			}		
     },
 	
 	'click #prevPage1': function(){   
 		for (var i = 0; i < theBallPages.length; i++) {
-			if(theBallPages[i]==newCurrentPage&&i>0){
+			if(theBallPages[i]==ballCurrentPage&&i>0){
 				$("#"+theBallPages[i-1]).show();
 				$("#"+theBallPages[i]).hide();
-				newCurrentPage = theBallPages[i-1];
+				ballCurrentPage = theBallPages[i-1];
 				break;
 			} 
+		}
+		if(ballCurrentPage=="newPage12"){
+				$(".glyphicon.glyphicon-chevron-right.ball").show();
+		}
+		if(ballCurrentPage=="newPage1"){
+				$(".glyphicon.glyphicon-chevron-left.ball").hide();
 		}
     },
 });
 Template.stories.onDestroyed(function () {
-		console.log("bye");
+		//console.log("bye");
 		currentPage = "page1";
-		newCurrentPage = "newPage1";
+		ballCurrentPage = "newPage1";
 		caughtInTheCrossfireCount = 0;
 		theBallCount = 0;  
 });
 Template.lyrics.events({
 	'click #showSnowflakes': function(){
 		if(snowflakesCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.snowflakes").show();
 			snowflakesCount ++;
 		}else{
@@ -162,7 +189,7 @@ Template.lyrics.events({
 	},
 	'click #showFollowMe': function(){
 		if(followMeCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.followMe").show();
 			followMeCount ++;
 		}else{
@@ -172,7 +199,7 @@ Template.lyrics.events({
 	},
 	'click #showSwanSong': function(){
 		if(swanSongCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.swanSong").show();
 			 swanSongCount++;
 		}else{
@@ -183,7 +210,7 @@ Template.lyrics.events({
 	,
 	'click #showComplete': function(){
 		if(completeCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.complete").show();
 			 completeCount++;
 		}else{
@@ -194,7 +221,7 @@ Template.lyrics.events({
 	,
 	'click #showLetMeIn': function(){
 		if(letMeInCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.letMeIn").show();
 			 letMeInCount++;
 		}else{
@@ -205,7 +232,7 @@ Template.lyrics.events({
 	,
 	'click #showBittersweet': function(){
 		if(bittersweetCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.bittersweet").show();
 			 bittersweetCount++;
 		}else{
@@ -216,7 +243,7 @@ Template.lyrics.events({
 	,
 	'click #showHeroes': function(){
 		if(heroesCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.heroes").show();
 			 heroesCount++;
 		}else{
@@ -227,7 +254,7 @@ Template.lyrics.events({
 	,
 	'click #showRamblings': function(){
 		if(ramblingsCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.ramblings").show();
 			 ramblingsCount++;
 		}else{
@@ -238,7 +265,7 @@ Template.lyrics.events({
 	,
 	'click #showOptimist': function(){
 		if(optimistCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.optimist").show();
 			 optimistCount++;
 		}else{
@@ -249,7 +276,7 @@ Template.lyrics.events({
 	,
 	'click #showJustBreathe': function(){
 		if(justBreatheCount == 0){
-			console.log("yo");
+			//console.log("yo");
 			$("div.justBreathe").show();
 			 justBreatheCount++;
 		}else{
