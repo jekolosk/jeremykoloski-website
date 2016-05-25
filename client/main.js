@@ -169,12 +169,31 @@ Template.stories.events({
 		}
     },
 });
-Template.stories.onDestroyed(function () {
+
+Template.stories.onRendered(function () {
 		//console.log("bye");
-		currentPage = "page1";
-		ballCurrentPage = "newPage1";
-		caughtInTheCrossfireCount = 0;
-		theBallCount = 0;  
+		if(theBallCount == 1){
+			$("div.theBall").show();
+			$("#"+ballCurrentPage).show();
+			if(ballCurrentPage!="newPage1"){
+				$(".glyphicon.glyphicon-chevron-left.ball").show();
+			}
+			if(ballCurrentPage == "newPage13"){
+				$(".glyphicon.glyphicon-chevron-right.ball").hide();
+			}
+		}
+		
+		if(caughtInTheCrossfireCount == 1){
+			$("div.caughtInTheCrossfire").show();
+			$("#"+currentPage).show();
+			if(currentPage!="page1"){
+				$(".glyphicon.glyphicon-chevron-left.crossfire").show();
+			}
+			if(currentPage == "page8"){
+				$(".glyphicon.glyphicon-chevron-right.crossfire").hide();
+			}
+		}	
+ 
 });
 Template.lyrics.events({
 	'click #showSnowflakes': function(){

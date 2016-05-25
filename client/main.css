@@ -23,13 +23,6 @@ p.description{
 	text-align: center;
 }
 
-.frog:hover{
-	text-shadow:
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
 .headingSize{
 	padding-top:.02px;
 	background-image: -webkit-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);
