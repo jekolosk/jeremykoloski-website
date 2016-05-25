@@ -32,10 +32,10 @@ Router.configure({
     layoutTemplate: 'main'
 });
 
-Template.photoshop.events({
+Template.photoshop.events({ 
   'click .thumbnail': function(){   
 		var image = document.getElementById('galleryImage');
-		eventId = event.target.id;
+		eventId = event.target.id;	
 		console.log("id is" + eventId);
 	    $(".gray").show();
         image.src = "/images/" + eventId + ".jpg";
@@ -51,7 +51,11 @@ Template.photoshop.events({
 				image.src = "/images/" + myPics[i+1] + ".jpg";
 				eventId= myPics[i+1];
 				break;
-			}	
+			}
+		}
+		if(eventId=="SwissDE1"){
+				image.src = "/images/venice.jpg";
+				eventId = "venice";
 		}
 	},
 	'click #prevPic': function(){ 
@@ -61,9 +65,14 @@ Template.photoshop.events({
 				image.src = "/images/" + myPics[i-1] + ".jpg";
 				eventId= myPics[i-1];
 				break;
-			}	
+			}
 		}
-	}
+		if(eventId=="venice"){
+				console.log(eventId);
+				image.src = "/images/SwissDE1.jpg";
+				eventId = "SwissDE1";
+		}
+	},
 	
 });
 //class for formatting id for page selection
@@ -133,7 +142,13 @@ Template.stories.events({
 		}
     },
 });
-
+Template.stories.onDestroyed(function () {
+		console.log("bye");
+		currentPage = "page1";
+		newCurrentPage = "newPage1";
+		caughtInTheCrossfireCount = 0;
+		theBallCount = 0;  
+});
 Template.lyrics.events({
 	'click #showSnowflakes': function(){
 		if(snowflakesCount == 0){
@@ -243,5 +258,17 @@ Template.lyrics.events({
 		}
 	}
 	,
+});
 
+Template.lyrics.onDestroyed(function () {
+		snowflakesCount = 0;
+		followMeCount = 0; 
+		swanSongCount = 0;
+		completeCount = 0; 
+		letMeInCount = 0;
+		bittersweetCount = 0; 
+		heroesCount = 0;
+		ramblingsCount = 0; 
+		optimistCount = 0;
+		justBreatheCount = 0;  
 });

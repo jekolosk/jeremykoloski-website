@@ -64,10 +64,13 @@ p.description{
 }
 .glyphicon.glyphicon-remove {
     font-size: 50px;
-	 display:block;
+	display:block;
     text-align:right;
 	padding-right:100px;
 	color:white;
+}
+.glyphicon.glyphicon-remove:hover {
+	color:  #00ccff;
 }
 .glyphicon.glyphicon-chevron-right{
     text-align: center;
@@ -79,6 +82,9 @@ p.description{
     width: 100px;
     height: 100px;
 }
+.glyphicon.glyphicon-chevron-right:hover{
+	color:  #00ccff;
+}
 .glyphicon.glyphicon-chevron-left{
     text-align: center;
 	font-size: 50px;
@@ -89,7 +95,9 @@ p.description{
     width: 100px;
     height: 100px;
 }
-
+.glyphicon.glyphicon-chevron-left:hover{
+	color:  #00ccff;
+}
 .glyphicon.glyphicon-chevron-right.again{
     text-align: center;
 	font-size: 50px;
@@ -98,6 +106,14 @@ p.description{
     width: 100px;
 	left: 800px;
     height: 100px;
+	text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.glyphicon.glyphicon-chevron-right.again:hover{
+	color:  #00ccff;
 }
 .glyphicon.glyphicon-chevron-left.again{
     text-align: center;
@@ -107,8 +123,15 @@ p.description{
 	left: -105px;
     width: 100px;
     height: 100px;
+	text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
-
+.glyphicon.glyphicon-chevron-left.again:hover{
+	color:  #00ccff;
+}
 div.caughtInTheCrossfire{
 	display:none;
 }
@@ -119,7 +142,7 @@ div.page1{
 	position: relative;
 	background-color:white;
 	width:800px;
-	height:560px;
+	height:590px;
 	margin: auto;
 	padding-left:50px;
 	padding-right:50px;
@@ -127,7 +150,7 @@ div.page1{
 div.page1again{
 	background-color:white;
 	width:800px;
-	height:560px;
+	height:590px;
 	margin: auto;
 	padding-left:50px;
 	padding-right:50px;
@@ -141,7 +164,7 @@ div.page{
 	display: none;
 	background-color:white;
 	width:800px;
-	height:560px;
+	height:590px;
 	margin: auto;
 	padding-top:20px;
 	padding-left:50px;
@@ -153,7 +176,7 @@ div.newPage{
 	display: none;
 	background-color:white;
 	width:800px;
-	height:560px;
+	height:590px;
 	margin: auto;
 	padding-top:20px;
 	padding-left:50px;
