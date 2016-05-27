@@ -1,6 +1,9 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { Accounts } from 'meteor/accounts-base';
+import { Mongo } from 'meteor/mongo';
 import './main.html';
+Chats = new Mongo.Collection('chats');
 var caughtInTheCrossfireCount = 0;
 var theBallCount = 0;
 var snowflakesCount = 0;
@@ -31,7 +34,53 @@ Router.route('/', {
 Router.configure({
     layoutTemplate: 'main'
 });
-
+Accounts.ui.config({
+  passwordSignupFields: 'USERNAME_ONLY',
+});
+Template.main.helpers({	
+   comment() {
+    // Show newest tasks at the top
+    return Chats.find({}, { sort: { createdAt: -1 } });
+  },
+});
+Template.main.events({
+  'click .new-comment': function(){  
+		var isLoggedIn = 0;
+		try {
+			if(Meteor.user().username){
+			isLoggedIn = 1;
+			}
+		}
+		catch(err) {
+		}
+		
+		console.log(isLoggedIn);
+		if(isLoggedIn==0){
+			console.log("hi");
+			alert("Please login to comment");
+		}
+  },
+  'click .btn.btn-default.cancel': function(){
+		console.log("hi");
+		$('#new-comment').trigger("reset");
+  },
+  'click .btn.btn-primary.submit': function(){   
+    // Prevent default browser form submit
+    event.preventDefault();
+ 
+    // Get value from form element
+    const text = $("#exampleTextarea").val();
+ 
+    // Insert a task into the collection
+    Chats.insert({
+      text,
+      createdAt: new Date(), // current time
+	  owner: Meteor.userId(),
+      username: Meteor.user().username,
+    });
+	$('#new-comment').trigger("reset");
+  },
+});
 Template.photoshop.events({ 
   'click .thumbnail': function(){   
 		var image = document.getElementById('galleryImage');

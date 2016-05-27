@@ -328,5 +328,25 @@ div.justBreathe{
 	background: -moz-linear-gradient(bottom right,#0066ff, #99c2ff); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(to bottom right, #0066ff, #99c2ff); /* Standard syntax */
 }
+.login-link-text{
+	color: black;
+	font-size: 120%;
+}
+#login-buttons {
+    position: absolute;
+	top: 0px;
+	right: 10px;
+}
+.login-link-and-dropdown-list {
+    position: relative;
+	right:160px;
+}
+.list-group.comments{
+	border: 1px solid #99c2ff;
+}
+div.commentBoxContainer{
+	background-color:white;
+	border: 1px solid #99c2ff;
+}
 
 
