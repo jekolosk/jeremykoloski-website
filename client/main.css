@@ -349,23 +349,22 @@ div.commentBoxContainer{
 	border: 1px solid #99c2ff;
 }
 #share-buttons img {
-width: 35px;
-padding: 5px;
-border: 0;
-box-shadow: 0;
-display: inline;
+	width: 35px;
+	padding: 5px;
+	border: 0;
+	box-shadow: 0;
+	display: inline;
 }
-.homePic{
-	position:relative;
-}
-.share{
-	position:relative;	
+.sharingButtons{
+	padding-bottom:15px;
 }
 .cover{
-	
+	width:750px;
+	overflow:hidden;
 }
-.width1{
-	width:600px;
+.homeContainer{
+	height: 600px;
+	overflow:hidden;
 }
 
 
