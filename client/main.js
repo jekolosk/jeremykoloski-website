@@ -37,6 +37,7 @@ Router.configure({
 Accounts.ui.config({
   passwordSignupFields: 'USERNAME_ONLY',
 });
+
 Template.main.helpers({	
    comment() {
     // Show newest tasks at the top
@@ -44,6 +45,14 @@ Template.main.helpers({
   },
 });
 Template.main.events({
+  'click .edit'(){
+	if(isLoggedIn==1 && Meteor.user().username == "jeremy"){
+		$("div.deleteButton").show();
+	}
+  },
+  'click .delete'() {
+    Chats.remove(this._id);
+  },
   'click .new-comment': function(){  
 		var isLoggedIn = 0;
 		try {
@@ -54,9 +63,7 @@ Template.main.events({
 		catch(err) {
 		}
 		
-		console.log(isLoggedIn);
 		if(isLoggedIn==0){
-			console.log("hi");
 			alert("Please login to comment");
 		}
   },

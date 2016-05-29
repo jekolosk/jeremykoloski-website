@@ -19,7 +19,7 @@
 		</form>
 		</div>
 		<button type="submit" class="btn btn-primary submit">Submit</button><button type="submit" class="btn btn-default cancel">Cancel</button>
-		<ul class="list-group comments">
+		<ul class="list-group comments" id = "main_list">
 		{{#each comment}}
 			{{> comments}}
 		{{/each}}
@@ -28,7 +28,7 @@
     <p>Copyright &copy; Bullfrog Blog, 2015-2016.</p>
 </template>
 <template name="comments">
-   <li class="list-group-item"><strong>{{username}}</strong>: {{text}}</li>
+   <li class="list-group-item" id = "comment"><strong>{{username}}</strong>: {{text}}</li>
 </template>
 <template name="navigation">
     <div class="btn-group btn-group-justified" role="group">
