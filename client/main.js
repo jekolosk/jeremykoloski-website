@@ -110,6 +110,8 @@ Template.photoshop.events({
 		//console.log("clicked");
 		$(".gray").hide();
 		$("body").css("overflow", "scroll");
+		var image = document.getElementById('galleryImage');
+		image.src = "";
 	},
 	'click #nextPic': function(){ 
 		var image = document.getElementById('galleryImage');
