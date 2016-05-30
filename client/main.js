@@ -109,7 +109,7 @@ Template.photoshop.events({
 	'click #remove': function(){ 
 		//console.log("clicked");
 		$(".gray").hide();
-		$("body").css("overflow", "scroll");
+		$("body").css("overflow-y", "scroll");
 		var image = document.getElementById('galleryImage');
 		image.src = "";
 	},
