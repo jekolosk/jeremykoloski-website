@@ -12,7 +12,7 @@ h2 {
 h3 {
 	color: white;
 	text-align: center;
-	font-family: 'Delius', cursive;
+	font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
 }
 body{
 	background-color: lightblue;
@@ -20,6 +20,7 @@ body{
 
 p.description{
 	color: white;
+	font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
 	text-align: center;
 }
 
@@ -308,7 +309,7 @@ div.justBreathe{
 	padding-bottom:50px;
 	display:none;
 }
-.container { 
+.container1 { 
 	height: 594px;
     overflow: hidden; 
 }
@@ -342,6 +343,7 @@ div.justBreathe{
 	right:160px;
 }
 .list-group.comments{
+	position:relative;
 	border: 1px solid #99c2ff;
 }
 div.commentBoxContainer{
@@ -366,5 +368,49 @@ div.commentBoxContainer{
 	height: 600px;
 	overflow:hidden;
 }
-
+.veniceDescription{
+	display: none;
+}
+.lizardDescription{
+	display:none;
+}
+.streamDescription{
+	display: none;
+}
+.acDescription{
+	display:none;
+}
+.brandeisDescription{
+	display: none;
+}
+.catDescription{
+	display:none;
+}
+.colorizeDescription{
+	display: none;
+}
+.compositingDescription{
+	display:none;
+}
+.mountains_waterDescription{
+	display: none;
+}
+.swiss_viewDescription{
+	display:none;
+}
+.swiss_mounatins_lens_flareDescription{
+	display: none;
+}
+.swissDE2Description{
+	display:none;
+}
+.FlowerDEDescription{
+	display:none;
+}
+.into_the_sunsetDescription{
+	display: none;
+}
+.SwissDE1Description{
+	display:none;
+}
 

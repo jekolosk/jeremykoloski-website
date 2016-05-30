@@ -4,6 +4,8 @@ import { Accounts } from 'meteor/accounts-base';
 import { Mongo } from 'meteor/mongo';
 import './main.html';
 Chats = new Mongo.Collection('chats');
+var clicked = 0;
+var prevDiv = ".lizardDescription";
 var caughtInTheCrossfireCount = 0;
 var theBallCount = 0;
 var snowflakesCount = 0;
@@ -88,20 +90,33 @@ Template.main.events({
 	$('#new-comment').trigger("reset");
   },
 });
+
 Template.photoshop.events({ 
-  'click .thumbnail': function(){   
+	
+  'click .thumbnail': function(){  
+		clicked = 1;
 		var image = document.getElementById('galleryImage');
 		eventId = event.target.id;	
-		//console.log("id is" + eventId);
+		console.log("id is" + eventId);
+		image.src = "/images/" + eventId + ".jpg";
 	    $(".gray").show();
-        image.src = "/images/" + eventId + ".jpg";
+		console.log("event id is" + eventId);
+		$("body").css("overflow", "hidden");
+		console.log(image.src);
+		console.log(eventId);
+		showDescriptions(event.target.id);	
     },
 	'click #remove': function(){ 
 		//console.log("clicked");
 		$(".gray").hide();
+		$("body").css("overflow", "scroll");
 	},
 	'click #nextPic': function(){ 
 		var image = document.getElementById('galleryImage');
+		if(eventId=="SwissDE1"){
+				image.src = "/images/venice.jpg";
+				eventId = "venice";
+		}else{
 		for (var i = 0; i < myPics.length-1; i++) { 
 			if(myPics[i]==(eventId)){
 				image.src = "/images/" + myPics[i+1] + ".jpg";
@@ -109,25 +124,25 @@ Template.photoshop.events({
 				break;
 			}
 		}
-		if(eventId=="SwissDE1"){
-				image.src = "/images/venice.jpg";
-				eventId = "venice";
 		}
+		showDescriptions(eventId);	
 	},
 	'click #prevPic': function(){ 
 		var image = document.getElementById('galleryImage');
+		if(eventId=="venice"){
+				//console.log(eventId);
+				image.src = "/images/SwissDE1.jpg";
+				eventId = "SwissDE1";
+		}else{
 		for (var i = 0; i < myPics.length; i++) { 
 			if(myPics[i]==(eventId)&&i>0){
 				image.src = "/images/" + myPics[i-1] + ".jpg";
 				eventId= myPics[i-1];
 				break;
 			}
-		}
-		if(eventId=="venice"){
-				//console.log(eventId);
-				image.src = "/images/SwissDE1.jpg";
-				eventId = "SwissDE1";
-		}
+		}}
+		
+		showDescriptions(eventId);
 	},
 	
 });
@@ -374,3 +389,126 @@ Template.lyrics.onDestroyed(function () {
 		optimistCount = 0;
 		justBreatheCount = 0;  
 });
+
+function showDescriptions(eventId) {
+     if(eventId=="venice"){
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".veniceDescription").show();
+			prevDiv = ".veniceDescription";
+			console.log("prev div is " + prevDiv);
+		}
+		if(eventId=="lizard_woman"){
+			console.log("prev div is " + prevDiv);
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".lizardDescription").show();
+			prevDiv = ".lizardDescription";
+		}
+		if(eventId=="Swiss_stream"){
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".streamDescription").show();
+			prevDiv = ".streamDescription";
+			console.log("prev div is " + prevDiv);
+		}
+		if(eventId=="beach"){
+			console.log("prev div is " + prevDiv);
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".acDescription").show();
+			prevDiv = ".acDescription";
+		}
+		if(eventId=="Brandeis_fall"){
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".brandeisDescription").show();
+			prevDiv = ".brandeisDescription";
+			console.log("prev div is " + prevDiv);
+		}
+		if(eventId=="cat"){
+			console.log("prev div is " + prevDiv);
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".catDescription").show();
+			prevDiv = ".catDescription";
+		}
+		if(eventId=="Colorize"){
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".colorizeDescription").show();
+			prevDiv = ".colorizeDescription";
+			console.log("prev div is " + prevDiv);
+		}
+		if(eventId=="compositing_fun"){
+			console.log("prev div is " + prevDiv);
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".compositingDescription").show();
+			prevDiv = ".compositingDescription";
+		}
+		if(eventId=="mountains_water"){
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".mountains_waterDescription").show();
+			prevDiv = ".mountains_waterDescription";
+			console.log("prev div is " + prevDiv);
+		}
+		if(eventId=="swiss_view"){
+			console.log("prev div is " + prevDiv);
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".swiss_viewDescription").show();
+			prevDiv = ".swiss_viewDescription";
+		}
+		if(eventId=="swiss_mounatins_lens_flare"){
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".swiss_mounatins_lens_flareDescription").show();
+			prevDiv = ".swiss_mounatins_lens_flareDescription";
+			console.log("prev div is " + prevDiv);
+		}
+		if(eventId=="swissDE2"){
+			console.log("prev div is " + prevDiv);
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".swissDE2Description").show();
+			prevDiv = ".swissDE2Description";
+		}
+		if(eventId=="FlowerDE"){
+			console.log("prev div is " + prevDiv);
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".FlowerDEDescription").show();
+			prevDiv = ".FlowerDEDescription";
+		}
+		if(eventId=="into_the_sunset"){
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".into_the_sunsetDescription").show();
+			prevDiv = ".into_the_sunsetDescription";
+			console.log("prev div is " + prevDiv);
+		}
+		if(eventId=="SwissDE1"){
+			console.log("prev div is " + prevDiv);
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".SwissDE1Description").show();
+			prevDiv = ".SwissDE1Description";
+		}
+}
