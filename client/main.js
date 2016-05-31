@@ -29,6 +29,7 @@ Router.route('/originals');
 Router.route('/stories');
 Router.route('/lyrics');
 Router.route('/about');
+//Router.route('/contact');
 Router.route('/', {
     name: 'home',
 	template: 'home'
@@ -378,7 +379,16 @@ Template.lyrics.events({
 	}
 	,
 });
-
+Template.originals.events({
+	'click .imagePlaceholder': function(){
+		eventId = event.target.id;	
+		var target = document.getElementById(eventId);
+		console.log(eventId);
+		video = $(target).attr('data-video');
+		var vid = document.getElementById('currentVideo').src;
+        document.getElementById('currentVideo').src = video;
+	}
+});
 Template.lyrics.onDestroyed(function () {
 		snowflakesCount = 0;
 		followMeCount = 0; 

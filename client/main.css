@@ -413,4 +413,20 @@ div.commentBoxContainer{
 .SwissDE1Description{
 	display:none;
 }
+.imagePlaceholder{
+	padding-bottom: 5px;
+	background-color: gray;
+}
+.imagePlaceholder:hover{
+	-webkit-filter: brightness(0.25); filter: brightness(0.25);
+}
+.sideVideo{
+ height: 500px;
+ overflow-y: scroll;
+ overflow-x: hidden;
+ 
+}
 
+.border{
+	border: 1px solid black;
+}
