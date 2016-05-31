@@ -36,13 +36,7 @@ p.description{
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
-}
-.caption{
-	background-image: -webkit-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);
-	background-image:  linear-gradient(to bottom, #5bc0de 0%, #2aabd2 100%);
-	height: 90px;
-}
- 
+} 
 #gray {
 	display: none;
     position:fixed;
@@ -414,10 +408,10 @@ div.commentBoxContainer{
 	display:none;
 }
 .imagePlaceholder{
-	padding-bottom: 5px;
-	background-color: gray;
+	
 }
-.imagePlaceholder:hover{
+
+.thumb:hover{
 	-webkit-filter: brightness(0.25); filter: brightness(0.25);
 }
 .sideVideo{
@@ -429,4 +423,24 @@ div.commentBoxContainer{
 
 .border{
 	border: 1px solid black;
+}
+.videoDescription{
+	color: white;
+	text-align: center;
+	font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+	font-size: 120%;
+	position: relative;
+	bottom: 5px;
+}
+
+.caption{
+	background-image: -webkit-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);
+	background-image:  linear-gradient(to bottom, #5bc0de 0%, #2aabd2 100%);
+	height: 50px;
+	width:300px;
+	position: relative;
+	bottom: 50px;
+}
+.captionContainer{
+	position: absolute;
 }

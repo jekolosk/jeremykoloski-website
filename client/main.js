@@ -4,6 +4,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { Mongo } from 'meteor/mongo';
 import './main.html';
 Chats = new Mongo.Collection('chats');
+var thumbTarget = "";
 var clicked = 0;
 var prevDiv = ".lizardDescription";
 var caughtInTheCrossfireCount = 0;
@@ -381,13 +382,19 @@ Template.lyrics.events({
 });
 Template.originals.events({
 	'click .imagePlaceholder': function(){
+		$(thumbTarget).css("-webkit-filter", "brightness(1)");
+		$(thumbTarget).css("filter", "brightness(1)");
 		eventId = event.target.id;	
 		var target = document.getElementById(eventId);
-		console.log(eventId);
 		video = $(target).attr('data-video');
 		var vid = document.getElementById('currentVideo').src;
         document.getElementById('currentVideo').src = video;
-	}
+		var thumbId = getThumbId(eventId);
+		console.log("thumb id is " + thumbId);
+		thumbTarget = document.getElementById(thumbId);
+		$(thumbTarget).css("-webkit-filter", "brightness(0.25)");
+		$(thumbTarget).css("filter", "brightness(0.25)");
+	},
 });
 Template.lyrics.onDestroyed(function () {
 		snowflakesCount = 0;
@@ -401,7 +408,20 @@ Template.lyrics.onDestroyed(function () {
 		optimistCount = 0;
 		justBreatheCount = 0;  
 });
-
+function getThumbId(eventId){
+		var thumbId = "";
+		console.log(eventId);
+		if(eventId == "imagePlaceholder1"){
+			thumbId = "thumb1";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder2"){
+			console.log("hi");
+			thumbId = "thumb2";
+			return thumbId;
+		}
+		return thumbId;
+}
 function showDescriptions(eventId) {
      if(eventId=="venice"){
 			if(clicked == 1){
