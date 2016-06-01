@@ -13,25 +13,26 @@
 	{{> yield}}
 	<hr />
 	<body>
-	</body>	
+	</body>
+	<div class = "bottomSection">
 		<div class = "commentsSize">
-		<div class = "commentsPosition">
-			<div class = "commentBoxContainer">
-				<form class="new-comment" id = "new-comment">
-					<textarea class="form-control" name = "text" placeholder="Leave a comment" id="exampleTextarea" rows="3"></textarea>
-				</form>
-			</div>
-			<div class = "buttonContainer">
-				<div class = "buttons">
-				<button type="submit" class="btn btn-default cancel">Cancel</button><button type="submit" class="btn btn-primary submit" >Submit</button>
+			<div class = "commentsPosition">
+				<div class = "commentBoxContainer">
+					<form class="new-comment" id = "new-comment">
+						<textarea class="form-control" name = "text" placeholder="Leave a comment" id="exampleTextarea" rows="3"></textarea>
+					</form>
 				</div>
-			</div>
-			<ul class="list-group comments" id = "main_list">
+				<div class = "buttonContainer">
+					<div class = "buttons">
+						<button type="submit" class="btn btn-default cancel">Cancel</button><button type="submit" class="btn btn-primary submit" >Submit</button>
+					</div>
+				</div>
+				<ul class="list-group comments" id = "main_list">
 				{{#each comment}}
 					{{> comments}}
 				{{/each}}
-			</ul>
-		</div>
+				</ul>
+			</div>
 		</div>
 		<div class = "sharingButtons">	
 			<div class = "buttonPosition">
@@ -55,9 +56,12 @@
 				<p>Copyright &copy; Bullfrog Blog, 2015-2016.</p>
 			</div>
 		</div>
+	</div>
 </template>
 <template name="comments">
+	<div class = "gray1">
    <li class="list-group-item" id = "comment"><strong>{{username}}</strong>: {{text}}</li>
+    </div>
 </template>
 <template name="navigation">
     <div class="btn-group btn-group-justified" role="group">

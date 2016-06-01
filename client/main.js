@@ -93,14 +93,14 @@ Template.main.events({
   },
 });
 
-Template.photoshop.events({ 
-	
+Template.photoshop.events({ 	
   'click .thumbnail': function(){  
 		clicked = 1;
 		var image = document.getElementById('galleryImage');
 		eventId = event.target.id;	
 		console.log("id is" + eventId);
 		image.src = "/images/" + eventId + ".jpg";
+		$(".bottomSection").hide();
 	    $(".gray").show();
 		console.log("event id is" + eventId);
 		$("body").css("overflow", "hidden");
@@ -109,6 +109,7 @@ Template.photoshop.events({
 		showDescriptions(event.target.id);	
     },
 	'click #remove': function(){ 
+		$(".bottomSection").show();
 		//console.log("clicked");
 		$(".gray").hide();
 		$("body").css("overflow-y", "scroll");
@@ -244,9 +245,29 @@ Template.stories.events({
 		}
     },
 });
-
+Template.about.onRendered(function () {
+		$("body").css("overflow-y", "scroll");
+		$(".bottomSection").show();
+});
+Template.lyrics.onRendered(function () {
+		$("body").css("overflow-y", "scroll");
+		$(".bottomSection").show();
+});
+Template.photoshop.onRendered(function () {
+		$("body").css("overflow-y", "scroll");
+		$(".bottomSection").show();
+});
+Template.originals.onRendered(function () {
+		$("body").css("overflow-y", "scroll");
+		$(".bottomSection").show();
+});
+Template.home.onRendered(function () {
+		$("body").css("overflow-y", "scroll");
+		$(".bottomSection").show();
+});
 Template.stories.onRendered(function () {
-		//console.log("bye");
+		$("body").css("overflow-y", "scroll");
+		$(".bottomSection").show();
 		if(theBallCount == 1){
 			$("div.theBall").show();
 			$("#"+ballCurrentPage).show();
