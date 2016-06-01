@@ -14,19 +14,27 @@
 	<hr />
 	<body>
 	</body>	
-		<div class = "commentBoxContainer">
-		<form class="new-comment" id = "new-comment">
-			<textarea class="form-control" name = "text" placeholder="Leave a comment" id="exampleTextarea" rows="3"></textarea>
-		</form>
+		<div class = "commentsSize">
+		<div class = "commentsPosition">
+			<div class = "commentBoxContainer">
+				<form class="new-comment" id = "new-comment">
+					<textarea class="form-control" name = "text" placeholder="Leave a comment" id="exampleTextarea" rows="3"></textarea>
+				</form>
+			</div>
+			<div class = "buttonContainer">
+				<div class = "buttons">
+				<button type="submit" class="btn btn-default cancel">Cancel</button><button type="submit" class="btn btn-primary submit" >Submit</button>
+				</div>
+			</div>
+			<ul class="list-group comments" id = "main_list">
+				{{#each comment}}
+					{{> comments}}
+				{{/each}}
+			</ul>
 		</div>
-		<button type="submit" class="btn btn-primary submit">Submit</button><button type="submit" class="btn btn-default cancel">Cancel</button>
-		<ul class="list-group comments" id = "main_list">
-		{{#each comment}}
-			{{> comments}}
-		{{/each}}
-		</ul>	
-	
+		</div>
 		<div class = "sharingButtons">	
+			<div class = "buttonPosition">
 			<a href="http://www.facebook.com/sharer.php?u=http://jeremykoloski-63400.onmodulus.net/" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
 			</a>
@@ -39,8 +47,14 @@
 			<a href="https://twitter.com/share?url=http://jeremykoloski-63400.onmodulus.net/&amp;text=Jeremy%20Kolosi%20Blog&amp;hashtags=jeremykoloskiblog" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
 			</a>
-	</div>		
-    <p>Copyright &copy; Bullfrog Blog, 2015-2016.</p>
+			</div>
+		</div>
+		<hr>
+		<div class = "copyrightContainer">
+			<div class = "copyright">
+				<p>Copyright &copy; Bullfrog Blog, 2015-2016.</p>
+			</div>
+		</div>
 </template>
 <template name="comments">
    <li class="list-group-item" id = "comment"><strong>{{username}}</strong>: {{text}}</li>

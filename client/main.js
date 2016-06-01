@@ -396,6 +396,7 @@ Template.originals.events({
 		$(thumbTarget).css("filter", "brightness(0.25)");
 	},
 });
+
 Template.lyrics.onDestroyed(function () {
 		snowflakesCount = 0;
 		followMeCount = 0; 
@@ -418,6 +419,87 @@ function getThumbId(eventId){
 		if(eventId == "imagePlaceholder2"){
 			console.log("hi");
 			thumbId = "thumb2";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder3"){
+			thumbId = "thumb3";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder4"){
+			console.log("hi");
+			thumbId = "thumb4";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder5"){
+			thumbId = "thumb5";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder6"){
+			console.log("hi");
+			thumbId = "thumb6";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder7"){
+			thumbId = "thumb7";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder8"){
+			console.log("hi");
+			thumbId = "thumb8";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder9"){
+			thumbId = "thumb9";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder10"){
+			console.log("hi");
+			thumbId = "thumb10";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder11"){
+			thumbId = "thumb11";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder12"){
+			console.log("hi");
+			thumbId = "thumb12";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder13"){
+			thumbId = "thumb13";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder14"){
+			console.log("hi");
+			thumbId = "thumb14";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder15"){
+			thumbId = "thumb15";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder16"){
+			console.log("hi");
+			thumbId = "thumb16";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder17"){
+			thumbId = "thumb17";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder18"){
+			console.log("hi");
+			thumbId = "thumb18";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder19"){
+			thumbId = "thumb19";
+			return thumbId;
+		}
+		if(eventId == "imagePlaceholder20"){
+			console.log("hi");
+			thumbId = "thumb20";
 			return thumbId;
 		}
 		return thumbId;
