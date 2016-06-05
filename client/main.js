@@ -101,6 +101,7 @@ Template.photoshop.events({
 		console.log("id is" + eventId);
 		image.src = "/images/" + eventId + ".jpg";
 		$(".bottomSection").hide();
+		$(".topSection").hide();
 	    $(".gray").show();
 		console.log("event id is" + eventId);
 		$("body").css("overflow", "hidden");
@@ -109,6 +110,7 @@ Template.photoshop.events({
 		showDescriptions(event.target.id);	
     },
 	'click #remove': function(){ 
+		$(".topSection").show();
 		$(".bottomSection").show();
 		//console.log("clicked");
 		$(".gray").hide();
@@ -248,26 +250,32 @@ Template.stories.events({
 Template.about.onRendered(function () {
 		$("body").css("overflow-y", "scroll");
 		$(".bottomSection").show();
+		$(".topSection").show();
 });
 Template.lyrics.onRendered(function () {
 		$("body").css("overflow-y", "scroll");
 		$(".bottomSection").show();
+		$(".topSection").show();
 });
 Template.photoshop.onRendered(function () {
 		$("body").css("overflow-y", "scroll");
 		$(".bottomSection").show();
+		$(".topSection").show();
 });
 Template.originals.onRendered(function () {
 		$("body").css("overflow-y", "scroll");
 		$(".bottomSection").show();
+		$(".topSection").show();
 });
 Template.home.onRendered(function () {
 		$("body").css("overflow-y", "scroll");
 		$(".bottomSection").show();
+		$(".topSection").show();
 });
 Template.stories.onRendered(function () {
 		$("body").css("overflow-y", "scroll");
 		$(".bottomSection").show();
+		$(".topSection").show();
 		if(theBallCount == 1){
 			$("div.theBall").show();
 			$("#"+ballCurrentPage).show();

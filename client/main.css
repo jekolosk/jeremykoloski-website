@@ -14,7 +14,24 @@ h3 {
 	text-align: center;
 	font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
 }
+.fixedTop{
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	background-image: -webkit-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);
+	background-image:  linear-gradient(to bottom, #5bc0de 0%, #2aabd2 100%);
+	height: 85px;
+	clear: both;
+}
+.frogNavbar{
+	position: relative;
+	bottom: 10px;
+}
+.navbarTop{
+	top: 80px;
+}
 body{
+	margin-top: 150px;
 	background-color: lightblue;
 }
 p.description{
@@ -25,9 +42,8 @@ p.description{
 
 .headingSize{
 	padding-top:.02px;
-	background-image: -webkit-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);
-	background-image:  linear-gradient(to bottom, #5bc0de 0%, #2aabd2 100%);
-	height: 85px;
+	
+	z-index: 1;
 }
 .shadow{
 	text-shadow:
@@ -36,6 +52,7 @@ p.description{
     -1px 1px 0 #000,
     1px 1px 0 #000;
 } 
+
 #gray {
 	display: none;
     position:fixed;
