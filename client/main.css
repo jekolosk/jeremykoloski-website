@@ -339,14 +339,6 @@ div.justBreathe{
 	background: -moz-linear-gradient(bottom right,#0066ff, #99c2ff); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(to bottom right, #0066ff, #99c2ff); /* Standard syntax */
 }
-.login-link-text{
-	color: black;
-	font-size: 120%;
-	font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
-	position: relative;
-	left: 150px;
-	top: 5px;
-}
 .submit{
 	position:relative;
 	left:995px;
@@ -362,6 +354,14 @@ div.justBreathe{
 	position: relative;
 	left: 100px;
 }
+.login-link-text{
+	color: white;
+	font-size: 120%;
+	font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+	position: relative;
+	left: 150px;
+	top: 5px;
+}
 #login-buttons {
     position: absolute;
 	top: 0px;
@@ -370,6 +370,7 @@ div.justBreathe{
 .login-link-and-dropdown-list {
     position: relative;
 	right:160px;
+	top: 10px;
 }
 .list-group.comments{
 	position:relative;
