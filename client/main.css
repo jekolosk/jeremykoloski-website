@@ -362,6 +362,9 @@ div.justBreathe{
 	left: 150px;
 	top: 5px;
 }
+.login-link-text:hover{
+	color: lightblue;
+}
 #login-buttons {
     position: absolute;
 	top: 0px;
