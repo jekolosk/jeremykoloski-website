@@ -4,6 +4,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { Mongo } from 'meteor/mongo';
 import './main.html';
 Chats = new Mongo.Collection('chats');
+var count = 0;
 var thumbTarget = "";
 var clicked = 0;
 var prevDiv = ".lizardDescription";
@@ -22,7 +23,7 @@ var justBreatheCount = 0;
 var eventId= "";
 var currentPage = "page1"
 var ballCurrentPage = "newPage1";
-var myPics = ["venice", "lizard_woman","Swiss_stream","beach","Brandeis_fall","cat","Colorize","compositing_fun","mountains_water","swiss_view","swiss_mounatins_lens_flare","swissDE2","FlowerDE","into_the_sunset","SwissDE1"];
+var myPics = ["venice", "lizard_woman","Swiss_stream","beach","Brandeis_fall","cat","Colorize","compositing_fun","mountains_water","swiss_view","swiss_mounatins_lens_flare","swissDE2","FlowerDE","into_the_sunset","bird-at-beach","SwissDE1"];
 var caughtInTheCrossfirePages = ["page1","page2","page3","page4","page5","page6","page7", "page8"];
 var theBallPages = ["newPage1","newPage2","newPage3","newPage4","newPage5","newPage6","newPage7","newPage8","newPage9","newPage10","newPage11","newPage12","newPage13"];
 Router.route('/photoshop');
@@ -97,7 +98,9 @@ Template.photoshop.events({
   'click .thumbnail': function(){  
 		clicked = 1;
 		var image = document.getElementById('galleryImage');
-		eventId = event.target.id;	
+		eventId = event.target.id;
+		count = getCount(eventId);
+		console.log("count is " + count);
 		console.log("id is" + eventId);
 		image.src = "/images/" + eventId + ".jpg";
 		$(".bottomSection").hide();
@@ -117,13 +120,19 @@ Template.photoshop.events({
 		$("body").css("overflow-y", "scroll");
 		var image = document.getElementById('galleryImage');
 		image.src = "";
+		count = 0;
 	},
 	'click #nextPic': function(){ 
 		var image = document.getElementById('galleryImage');
 		if(eventId=="SwissDE1"){
 				image.src = "/images/venice.jpg";
 				eventId = "venice";
+				count = 0;
 		}else{
+			count++;
+			image.src = "/images/" + myPics[count] + ".jpg";
+			eventId= myPics[count];
+		/*
 		for (var i = 0; i < myPics.length-1; i++) { 
 			if(myPics[i]==(eventId)){
 				image.src = "/images/" + myPics[i+1] + ".jpg";
@@ -131,7 +140,9 @@ Template.photoshop.events({
 				break;
 			}
 		}
+		*/
 		}
+		console.log("event id: " + eventId);
 		showDescriptions(eventId);	
 	},
 	'click #prevPic': function(){ 
@@ -140,15 +151,20 @@ Template.photoshop.events({
 				//console.log(eventId);
 				image.src = "/images/SwissDE1.jpg";
 				eventId = "SwissDE1";
+				count = 15;
 		}else{
+				count--;
+				image.src = "/images/" + myPics[count] + ".jpg";
+				eventId= myPics[count];
+		/*
 		for (var i = 0; i < myPics.length; i++) { 
 			if(myPics[i]==(eventId)&&i>0){
 				image.src = "/images/" + myPics[i-1] + ".jpg";
 				eventId= myPics[i-1];
 				break;
 			}
-		}}
-		
+		}*/
+		}
 		showDescriptions(eventId);
 	},
 	
@@ -533,6 +549,60 @@ function getThumbId(eventId){
 		}
 		return thumbId;
 }
+var myPics = ["venice", "lizard_woman","Swiss_stream","beach","Brandeis_fall","cat","Colorize","compositing_fun","mountains_water","swiss_view","swiss_mounatins_lens_flare","swissDE2","FlowerDE","into_the_sunset","bird-at-beach","SwissDE1"];
+function getCount(eventId){
+		console.log(eventId);
+		if(eventId == "venice"){
+			return 0;
+		}
+		if(eventId == "lizard_woman"){
+			return 1;
+		}
+		if(eventId == "Swiss_stream"){
+			return 2;
+		}
+		if(eventId == "beach"){
+			return 3;
+		}
+		if(eventId == "Brandeis_fall"){
+			return 4;
+		}
+		if(eventId == "cat"){
+			console.log("hi");
+			return 5;
+		}
+		if(eventId == "Colorize"){
+			return 6;
+		}
+		if(eventId == "compositing_fun"){
+			return 7;
+		}
+		if(eventId == "mountains_water"){
+			return 8;
+		}
+		if(eventId == "swiss_view"){
+			return 9;
+		}
+		if(eventId == "swiss_mounatins_lens_flare"){
+			return 10;
+		}
+		if(eventId == "swissDE2"){
+			return 11;
+		}
+		if(eventId == "FlowerDE"){
+			return 12;
+		}
+		if(eventId == "into_the_sunset"){
+			return 13;
+		}
+		if(eventId == "bird-at-beach"){
+			return 14;
+		}
+		if(eventId == "SwissDE1"){
+			return 15;
+		}
+		return 0;
+}
 function showDescriptions(eventId) {
      if(eventId=="venice"){
 			if(clicked == 1){
@@ -646,6 +716,14 @@ function showDescriptions(eventId) {
 			prevDiv = ".into_the_sunsetDescription";
 			console.log("prev div is " + prevDiv);
 		}
+		if(eventId=="bird-at-beach"){
+			console.log("prev div is " + prevDiv);
+			if(clicked == 1){
+			$(prevDiv).hide();
+			}
+			$(".bird-at-beach-Description").show();
+			prevDiv = ".bird-at-beach-Description";
+		}
 		if(eventId=="SwissDE1"){
 			console.log("prev div is " + prevDiv);
 			if(clicked == 1){
@@ -654,4 +732,5 @@ function showDescriptions(eventId) {
 			$(".SwissDE1Description").show();
 			prevDiv = ".SwissDE1Description";
 		}
+		
 }

@@ -1,0 +1,8 @@
+{
+  "galaxy.meteor.com": { 
+     "env": { 
+	   "ROOT_URL": "http://jeremykoloski.meteorapp.com",
+       "MONGO_URL": "mongodb://jeremy:yellow@jello.modulusmongo.net:27017/e3tYgowa" 
+     } 
+   }
+}
